@@ -25,9 +25,9 @@ def evaluate(params):
                           img_size=img_size,
                           save_test_preds=save_test_preds)
     Path(params.evaluate.metrics_file).parent.mkdir(parents=True, exist_ok=True)
-    json.dum(
+    json.dump(
         obj=metrics,
-        fp=open(metrics_file_path,'w')
+        fp=open(metrics_file_path,'w'),
         indent=4
     )
 

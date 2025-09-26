@@ -21,7 +21,6 @@ def train_and_save_model(params):
     use_cpu = params.train.use_cpu
     augmentations = params.train.augmentations
     model_pickle_fpath = Path(params.train.model_pickle_fpath).absolute()
-
     train_model(train_img_dir_path=train_img_dir_path,
                 train_mask_dir_path=train_mask_dir_path,
                 n_epochs=n_epochs,
@@ -33,11 +32,12 @@ def train_and_save_model(params):
                 img_size=img_size,
                 augmentations=augmentations,
                 seed=random_state)
-    
-    if __name__ == '__main__':
-        args_parser=argparse.ArgumentParser()
-        args_parser.add_argument('--config',dest='config',required=True)
-        args=args_parser.parse_args()
-        params_path=args.config
-        params=load_params(params_path)
-        train_and_save_model(params)
+
+
+if __name__ == '__main__':
+    args_parser = argparse.ArgumentParser()
+    args_parser.add_argument('--config', dest='config', required=True)
+    args = args_parser.parse_args()
+    params_path = args.config
+    params = load_params(params_path)
+    train_and_save_model(params)
