@@ -1,0 +1,23 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+torch = "*"
+torchvision = "*"
+fastai = "*"
+fastcore = "*"
+tqdm = "*"
+pillow = "*"
+python-box = "*"
+dvclive = ">=1.0"
+uvicorn = "*"
+dvc-gdrive = "*"
+dvc = {extras = ["s3"], version = "*"}
+fastapi = {extras = ["all"], version = "*"}
+
+[dev-packages]
+
+[requires]
+python_version = "3.13"
